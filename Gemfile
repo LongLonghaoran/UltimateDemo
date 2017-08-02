@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 #摒弃erb使用haml
 gem 'haml'
 gem 'haml-rails'
