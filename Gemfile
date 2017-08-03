@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#使用grape写api
+gem  'grape'
+
 #摒弃erb使用haml
 gem 'haml'
 gem 'haml-rails'

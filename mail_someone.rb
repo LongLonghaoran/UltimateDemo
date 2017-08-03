@@ -12,7 +12,7 @@ mail.attachments.each do | attachment |
   # number of Part objects
   if (attachment.content_type.start_with?('image/'))
     # extracting images for example...
-    filename = attachment.filename
+    filename = attachment.try(:filename)
     begin
       File.open("/home/longhaoran/下载/"+filename, "w+b", 0644) {|f| f.write attachment.decoded}
     rescue => e
