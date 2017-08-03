@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-#haml
+#使用grape写api
+gem  'grape'
+
+#摒弃erb使用haml
 gem 'haml'
 gem 'haml-rails'
 
@@ -47,4 +50,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
