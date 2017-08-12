@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -23,6 +24,11 @@ module UltimateDemo
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    #配置加载lib下的api文件
+    require './lib/api/longhr/api.rb'
+
+    # 加载carrierwave，activemodel中文件上传用
+    require 'carrierwave/orm/activerecord'
 
   end
 end
