@@ -1,6 +1,5 @@
 Rails.application.configure do
-  #配置加载lib下的api文件
-  require './lib/api/longhr/api.rb'
+
 
   # Settings specified here will take precedence over those in config/application.rb.
 

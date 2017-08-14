@@ -7,4 +7,21 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    / Wrapper
+    #wrapper
+      / Navigation
+      / Page wraper
+      #page-wrapper.gray-bg
+        / Page wrapper
+        / Main view
+        - if notice
+          .alert.alert-warning.alert-dismissible.fade.in{:role => "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+            %b= notice
+        - if alert
+          .alert.alert-danger.alert-dismissible.fade.in{:role => "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+            %b= alert
     = yield

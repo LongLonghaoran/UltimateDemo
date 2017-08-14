@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+#使用bootstrap-sass构建页面
+gem 'bootstrap-sass', '~> 3.3.6'
+
+# 使用carrierwave实现文件上传的功能
+gem 'carrierwave'
+
 #使用grape写api
 gem  'grape'
 
