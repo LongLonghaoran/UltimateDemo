@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 #使用bootstrap-sass构建页面
 gem 'bootstrap-sass', '~> 3.3.6'
 
@@ -43,6 +44,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :production do
+  #程序抛异常就发邮件
+  gem 'exception_notification'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,4 +60,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #combine with the chrome extension railspanel
+  gem 'meta_request'
 end

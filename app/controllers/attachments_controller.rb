@@ -2,6 +2,8 @@ include ActionView::Helpers::NumberHelper
 class AttachmentsController < ApplicationController
   def index
     @attachments = Attachment.all
+    logger.tagged("BALABA BABA"){logger.debug "hey! what's up man?"}
+    logger.warn "我要日志，不要问我志是谁..."
   end
 
   def download

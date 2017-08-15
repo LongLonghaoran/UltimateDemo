@@ -1,11 +1,10 @@
 Rails.application.configure do
-
   #配置加载lib下的api文件
   require './lib/api/longhr/api.rb'
 
   # 加载carrierwave，activemodel中文件上传用
   require 'carrierwave/orm/activerecord'
-  
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -48,11 +47,12 @@ Rails.application.configure do
 
   #action_mailer
   #action_mailer的邮件host
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.smtp_settings = {
+  config.action_mailer.sendmail_settings = {
     :address => "smtp.163.com",
     :port => 25,
     :domain => "mail.163.com",

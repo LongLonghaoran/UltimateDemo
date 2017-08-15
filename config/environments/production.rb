@@ -1,4 +1,10 @@
 Rails.application.configure do
+  #配置加载lib下的api文件
+  require './lib/api/longhr/api.rb'
+
+  # 加载carrierwave，activemodel中文件上传用
+  require 'carrierwave/orm/activerecord'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -76,4 +82,29 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  #action_mailer
+  #action_mailer的邮件host
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.sendmail_settings = {
+    :address => "smtp.163.com",
+    :port => 25,
+    :domain => "mail.163.com",
+    :authentication => 'plain',
+    :user_name => "18687430124",
+    :password => "lhr241552"
+  }
 end
+
+Rails.application.config.middleware.use ExceptionNotification::Rack,
+:email => {
+  :deliver_with => :deliver_now, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
+  :email_prefix => "[PREFIX] ",
+  :sender_address => %{"notifier" <m18687430124@163.com>},
+  :exception_recipients => %w{longhaoran@tysen-kld.com},
+  :sections => %w{@kontroller request exception backtrace data},
+  :delivery_methiod => :sendmail
+}
