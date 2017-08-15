@@ -2,6 +2,6 @@ class Attachment < ActiveRecord::Base
 	mount_uploader :file, FileUploader
 
 	def file_name
-		(%r{/[\w.]*$}.match file.url).to_s.gsub("/","")
+		CGI.unescape(File.basename(file.url))
 	end
 end

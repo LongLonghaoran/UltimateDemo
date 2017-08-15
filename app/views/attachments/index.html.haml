@@ -1,38 +1,36 @@
-.row
-  .wrapper.wrapper-content.animated.fadeInUp
-    .row.m-t-sm
-      .col-lg-12
-      = form_for Attachment.new, url: upload_attachments_path, method: :post, html: { multipart: true, id: "fileupload" } do |f|
-        .row.fileupload-buttonbar
-          .col-lg-7
-            .btn.btn-primary.fileinput-button
-              %i.glyphicon.glyphicon-plus
-              选择或拖拽文件
-              = f.file_field :file
-              = f.submit "上传"
-        .tabs-container
-          .tab-content
-            .tab-pane#public_files.active
-              .panel-body
-                共有
-                %strong=@attachments.count
-                个结果
-                %table.footable.table.table-stripped.toggle-arrow-tiny{"data-page-size" => "15"}
-                  %thead
-                    %tr
-                      %th 文件名称
-                      %th 大小
-                      %th.text-right 操作
-                  %tbody
-                    - @attachments.each_with_index do |attachment, index|
-                      %tr
-                        %td=attachment.file_name
-                        %td=number_to_human_size attachment.size
-                        %td.text-right
-                          = link_to '下载', download_attachment_path(attachment), class: "btn btn-warning btn-xs"
-                          = link_to '删除', attachment_path(attachment), method: :delete,
-                              data: { :confirm => '确定要删除吗?' }, class: "btn btn-danger btn-xs"
-                  %tfoot
-                    %tr
-                      %td.footable-visible{:colspan => "9"}
-                        %ul.pagination.pull-right
+.row.m-t-sm
+  .col-lg-12
+  = form_for Attachment.new, url: upload_attachments_path, method: :post, html: { multipart: true, id: "fileupload" } do |f|
+    .row.fileupload-buttonbar
+      .col-lg-7
+        .btn.btn-primary.fileinput-button
+          %i.glyphicon.glyphicon-plus
+          选择或拖拽文件
+          = f.file_field :file
+          = f.submit "上传"
+    .tabs-container
+      .tab-content
+        .tab-pane#public_files.active
+          .panel-body
+            共有
+            %strong=@attachments.count
+            个结果
+            %table.footable.table.table-stripped.toggle-arrow-tiny{"data-page-size" => "15"}
+              %thead
+                %tr
+                  %th 文件名称
+                  %th 大小
+                  %th.text-right 操作
+              %tbody
+                - @attachments.each_with_index do |attachment, index|
+                  %tr
+                    %td=attachment.file_name
+                    %td=number_to_human_size attachment.file.size
+                    %td.text-right
+                      = link_to '下载', download_attachment_path(attachment), class: "btn btn-warning btn-xs"
+                      = link_to '删除', attachment_path(attachment), method: :delete,
+                          data: { :confirm => '确定要删除吗?' }, class: "btn btn-danger btn-xs"
+              %tfoot
+                %tr
+                  %td.footable-visible{:colspan => "9"}
+                    %ul.pagination.pull-right
