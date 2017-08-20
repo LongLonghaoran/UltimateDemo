@@ -27,7 +27,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  # 调试模式决定是否asset-pipeline是否会预编译并连接文件，默认开启，则不会预处理
+  # 调试模式决定是否asset-pipeline是否会预编译并连接文件，默认开启，则不会
   config.assets.debug = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
