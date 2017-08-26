@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :micro_blogs
   mount Longhr::API => '/'
 
   resources :attachments do

@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+#使用skt t1中单大魔王的工具来生成测试数据
+gem 'faker'
+
+#使用ElasticSearch
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 #使用bootstrap-sass构建页面
 gem 'bootstrap-sass', '~> 3.3.6'
 

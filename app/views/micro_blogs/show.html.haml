@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @micro_blog.title
+%p
+  %b Content:
+  = @micro_blog.content
+
+= link_to 'Edit', edit_micro_blog_path(@micro_blog)
+\|
+= link_to 'Back', micro_blogs_path

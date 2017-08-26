@@ -1,0 +1,28 @@
+%h1 Listing micro_blogs
+
+= form_tag(micro_blogs_path, method: 'get') do
+  .modal-body
+    .form-group
+      %input{name:'q'}
+      %input{type:'submit', value:'搜索'}
+%table
+  %thead
+    %tr
+      %th Title
+      %th Content
+      %th
+      %th
+      %th
+
+  %tbody
+    - @micro_blogs.each do |micro_blog|
+      %tr
+        %td= micro_blog.title
+        %td= micro_blog.content
+        %td= link_to 'Show', micro_blog
+        %td= link_to 'Edit', edit_micro_blog_path(micro_blog)
+        %td= link_to 'Destroy', micro_blog, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Micro blog', new_micro_blog_path
