@@ -6,7 +6,7 @@ class AttachmentsController < ApplicationController
 
   def download
     attachment = Attachment.find(params[:id])
-    file = File.open("public" + attachment.file.url)
+    file = File.open("public" + CGI.unescape(attachment.file.url))
     send_file file
   end
 

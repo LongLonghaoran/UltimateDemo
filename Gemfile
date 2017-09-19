@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#使用mysql2驱动mysql数据库
+gem 'mysql2'
 
 #使用bootstrap-sass构建页面
 gem 'bootstrap-sass', '~> 3.3.6'

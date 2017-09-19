@@ -116,6 +116,7 @@ GEM
     mustermann (1.0.0)
     mustermann-grape (1.0.0)
       mustermann (~> 1.0.0)
+    mysql2 (0.4.9)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     rack (1.6.8)
@@ -214,6 +215,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mysql2
   rails (= 4.2.8)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
