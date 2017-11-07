@@ -27,7 +27,7 @@
                     %td=attachment.file_name
                     %td=number_to_human_size attachment.file.size
                     %td.text-right
-                      = link_to '下载', download_attachment_path(attachment), class: "btn btn-warning btn-xs"
+                      = link_to '下载', attachment.file.url, class: "btn btn-warning btn-xs", target: "_blank"
                       = link_to '删除', attachment_path(attachment), method: :delete,
                           data: { :confirm => '确定要删除吗?' }, class: "btn btn-danger btn-xs"
               %tfoot
