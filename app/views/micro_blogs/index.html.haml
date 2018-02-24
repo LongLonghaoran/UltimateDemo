@@ -19,9 +19,9 @@
       %tr
         %td= micro_blog.title
         %td= micro_blog.content
-        %td= link_to 'Show', micro_blog
-        %td= link_to 'Edit', edit_micro_blog_path(micro_blog)
-        %td= link_to 'Destroy', micro_blog, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', micro_blogs_path(id: micro_blog.id)
+        %td= link_to 'Edit', edit_micro_blog_path(id: micro_blog.id)
+        %td= link_to 'Destroy', micro_blogs_path(id: micro_blog.id), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

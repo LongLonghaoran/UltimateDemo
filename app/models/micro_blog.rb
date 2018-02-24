@@ -3,14 +3,17 @@ require 'elasticsearch/model'
 class MicroBlog < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
-  settings index: { number_of_shards: 1 } do
-    mappings dynamic: 'false' do
-      indexes :title
-    end
-  end
-  MicroBlog.__elasticsearch__.client.indices.create index: MicroBlog.index_name,
-                                                    body: {
-                                                      settings: MicroBlog.settings.to_hash,
-                                                      mappings: MicroBlog.mappings.to_hash }
+  index_name self.table_name  # 这里可以自定义Article的ES索引名称
 
+  mapping do
+    indexes :subject, type: 'multi_field' do
+      indexes :raw, index: :not_analyzed
+      indexes :tokenized, analyzer: 'ik_max_word'
+    end
+    indexes :content, type: :string, analyzer: 'ik_max_word'
+  end
+end
+#导入数据到elastic_search
+def import_data
+  self.import
 end
