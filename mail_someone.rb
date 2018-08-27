@@ -3,7 +3,7 @@ Mail.defaults do
   retriever_method :pop3, :address    => "pop.163.com",
                           :port       => 995,
                           :user_name  => '18687430124@163.com',
-                          :password   => 'lhr241552',
+                          :password   => '*****',
                           :enable_ssl => true
 end
 mail = Mail.last
