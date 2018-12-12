@@ -12,7 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave'
 
 #使用grape写api
-gem  'grape'
+gem  'grape', ">= 1.1.0"
 
 #摒弃erb使用haml
 gem 'haml'
