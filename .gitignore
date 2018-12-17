@@ -17,3 +17,16 @@
 /tmp
 /public/uploads
 /.byebug_history
+config/database.yml
+.idea/.generators
+.idea/.rakeTasks
+.idea/misc.xml
+.idea/modules.xml
+.idea/UltimateDeomo.iml
+.idea/vcs.xml
+.idea/workspace.xml
+appendonly.aof
+config/database.yml
+db/schema.rb
+Untitled
+config/database.yml
