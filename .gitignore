@@ -15,7 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
-/public/uploads
+/public/*
 /.byebug_history
 config/database.yml
 .idea/.generators
@@ -27,6 +27,6 @@ config/database.yml
 .idea/workspace.xml
 appendonly.aof
 config/database.yml
+config/secrets.yml
 db/schema.rb
 Untitled
-config/database.yml

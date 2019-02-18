@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'execjs'
 
 #使用mysql2驱动mysql数据库
 gem 'mysql2'
