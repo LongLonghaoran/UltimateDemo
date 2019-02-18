@@ -1,4 +1,11 @@
 Rails.application.configure do
+  #配置加载lib下的api文件
+  require './lib/api/longhr/api.rb'
+
+  # 加载carrierwave，activemodel中文件上传用
+  require 'carrierwave/orm/activerecord'
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -22,7 +29,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.serve_static_files = true
+  config.public_file_server.enabled = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
