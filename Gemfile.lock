@@ -235,6 +235,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  execjs
   grape (>= 1.1.0)
   haml
   haml-rails
