@@ -30,3 +30,6 @@ config/database.yml
 config/secrets.yml
 db/schema.rb
 Untitled
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
