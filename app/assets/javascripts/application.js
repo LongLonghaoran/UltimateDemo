@@ -19,7 +19,7 @@
 
 $(document).ready(function(){
     // direct_uploads.js
-
+    console.log('welcome to UltimateDemo');
     addEventListener("direct-upload:initialize", event => {
         const { target, detail } = event
         const { id, file } = detail
