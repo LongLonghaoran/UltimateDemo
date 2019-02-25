@@ -3,16 +3,16 @@ set :stage, :production
 
 set :rails_env, :production
 
-set :deploy_to, "/var/www/projects/teacher_evaluation_#{fetch :stage}"
-set :shared_path, "/mntf1/projects/teacher_evaluation_#{fetch :stage}"
-set :puma_conf, "#{fetch :shared_path}/shared/config/puma.rb"
+set :deploy_to,  "/home/longhr/www/UltimateDemo_#{fetch :stage}"
+set :shared_path,  "/home/longhr/www/UltimateDemo_#{fetch :stage}"
+set :puma_conf, "#{fetch :shared_path}/config/puma.rb"
 
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "104.225.147.236 ", user: "longhr", roles: %w{app db web}, my_property: :my_value
+server "104.225.147.236:28664", user: "longhr", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
