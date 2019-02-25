@@ -65,6 +65,8 @@ group :development do
   gem "capistrano-rails", "~> 1.3", require: false
   gem 'capistrano3-puma'
   gem 'capistrano-rvm'
+  gem 'capistrano3-nginx', '~> 2.0'
+  gem 'capistrano-upload-config'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
