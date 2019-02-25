@@ -1,11 +1,30 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "UltimateDemo"
-set :repo_url, "git@github.com:LongLonghaoran/UltimateDemo.git"
-
-# Default branch is :master
+lock "~> 3.11.0"
+set :application, 'UltimateDemo'
+set :repo_url, 'git@github.com:LongLonghaoran/UltimateDemo.git'
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :deploy_to, '/home/longhr/www/UltimateDemo'
+set :nginx_server_name, '104.225.147.236'
+set :use_sudo, true
+append :linked_dirs, 'node_modules', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'public/uploads'
+namespace :deploy do
+  before 'check:linked_files', 'puma:config'
+  before 'check:linked_files', 'puma:nginx_config'
+  after 'puma:restart', 'nginx:restart'
+end
+
+# set :application, "UltimateDemo"
+# set :repo_url, "git@github.com:LongLonghaoran/UltimateDemo.git"
+# set :nginx_server_name, '132.232.127.218'
+# namespace :deploy do
+#   before 'check:linked_files', 'puma:config'
+#   before 'check:linked_files', 'puma:nginx_config'
+#   after 'puma:restart', 'nginx:restart'
+# end
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/home/longhr/www/UltimateDemo"
