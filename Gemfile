@@ -7,7 +7,7 @@ gem 'execjs'
 gem 'mysql2'
 
 #使用bootstrap-sass构建页面
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', ">= 3.4.1"
 
 # 使用carrierwave实现文件上传的功能
 gem 'carrierwave'
@@ -60,6 +60,9 @@ group :development, :test do
 end
 
 group :development do
+  # 项目部署
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.3", require: false
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

@@ -18,13 +18,7 @@
 /public/*
 /.byebug_history
 config/database.yml
-.idea/.generators
-.idea/.rakeTasks
-.idea/misc.xml
-.idea/modules.xml
-.idea/UltimateDeomo.iml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea/*
 appendonly.aof
 config/database.yml
 config/secrets.yml
