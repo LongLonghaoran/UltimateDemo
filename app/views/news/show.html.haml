@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @news.title
+%p
+  %b T:
+  = @news.t_id
+%p
+  %b App:
+  = @news.app_id
+%p
+  %b Avatar url:
+  = @news.avatar_url
+%p
+  %b V url:
+  = @news.v_url
+%p
+  %b View count:
+  = @news.view_count
+%p
+  %b Update time:
+  = @news.update_time
+%p
+  %b Comment num:
+  = @news.comment_num
+
+= link_to 'Edit', edit_news_path(@news)
+\|
+= link_to 'Back', news_index_path

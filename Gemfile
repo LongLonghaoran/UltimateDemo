@@ -43,6 +43,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootsnap', require: false
+
+gem 'sidekiq'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,6 +57,10 @@ gem 'bootsnap', require: false
 
 # amazon s3 upload
 gem "aws-sdk-s3", require: false
+
+# 网络请求
+gem 'rest-client'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

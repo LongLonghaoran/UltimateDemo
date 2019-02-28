@@ -1,4 +1,4 @@
-class CreateFileJob < ActiveJob::Base
+class CreateFileJob < ApplicationJob
   queue_as :default
 
   def perform(*args)

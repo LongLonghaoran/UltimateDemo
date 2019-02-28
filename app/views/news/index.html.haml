@@ -1,0 +1,29 @@
+%h1 Listing news
+= News.count
+= link_to '开始同步', sync_news_index_path, class: 'btn btn-primary'
+%table.table
+  %thead
+    %tr
+      %th 标题
+      %th 封面
+      %th 评论数
+      %th 摘要
+      %th item_id
+      %th group_id
+      %th source_url
+      %th 更新时间
+
+  %tbody
+    - @news.each do |news|
+      %tr
+        %td= news.title
+        %td= image_tag news.middle_image_url if news.middle_image_url.present?
+        %td= news.comments_count
+        %td= news.abstract
+        %td= news.item_id
+        %td= news.group_id
+        %td= link_to news.source_url, news.source_url
+        %td= news.updated_at
+%br
+
+= link_to 'New News', new_news_path

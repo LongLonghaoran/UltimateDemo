@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :news do
+    collection do
+      get :sync
+    end
+  end
   resources :articles
   devise_for :users
 
