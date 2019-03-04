@@ -43,7 +43,7 @@ class News < ActiveRecord::Base
     def sync_toutiao
       query_params = {
           max_behot_time: Time.now.beginning_of_day.to_i,
-          category: 'news_hot',
+          category: 'news_tech',
           utm_source: 'toutiao',
           widen: 1,
           tadrequire: true
@@ -62,7 +62,7 @@ class News < ActiveRecord::Base
           news.comments_count= item['comments_count']
           news.chinese_tag= item['chinese_tag']
           news.source= item['source']
-          news.source_url= TOUTIAO_SYNC_URL + item['source_url']
+          news.source_url= 'https://www.toutiao.com' + item['source_url']
           news.middle_image_url= item['middle_image']
           news.save!
           puts "已处理:#{number}条新闻!"
